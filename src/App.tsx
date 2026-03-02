@@ -16,53 +16,53 @@ import Lesson14 from './components/Lesson14'
 import Lesson15 from './components/Lesson15'
 import Lesson16 from './components/Lesson16'
 import Lesson17 from './components/Lesson17'
+import Lesson18 from './components/Lesson18'
 function App() {
   const [lesson, setLesson] = useState('lesson1')
-
-  
- const lessons = {
-  lesson1: Lesson1,
-  lesson2: Lesson2,
-  lesson3: Lesson3,
-  lesson4: Lesson4,
-  lesson5: Lesson5,
-  lesson6: Lesson6,
+  const lessons = {
+    lesson1: Lesson1,
+    lesson2: Lesson2,
+    lesson3: Lesson3,
+    lesson4: Lesson4,
+    lesson5: Lesson5,
+    lesson6: Lesson6,
     lesson7: Lesson7,
-  lesson8: Lesson8,
-  lesson9: Lesson9,
-   lesson10: Lesson10,
+    lesson8: Lesson8,
+    lesson9: Lesson9,
+    lesson10: Lesson10,
     lesson11: Lesson11,
-     lesson12: Lesson12,
-      lesson13: Lesson13,
-          lesson14: Lesson14,
-              lesson15: Lesson15,
-                  lesson16: Lesson16,
-                  lesson17: Lesson17,
+    lesson12: Lesson12,
+    lesson13: Lesson13,
+    lesson14: Lesson14,
+    lesson15: Lesson15,
+    lesson16: Lesson16,
+    lesson17: Lesson17,
+    lesson18: Lesson18,
 
-} as const
+  } as const
 
-type LessonKey = keyof typeof lessons
+  type LessonKey = keyof typeof lessons
 
 
 
-const renderLesson = () => {
-  const LessonComponent = lessons[lesson as LessonKey]
-  return LessonComponent && <LessonComponent />
-}
+  const renderLesson = () => {
+    const LessonComponent = lessons[lesson as LessonKey]
+    return LessonComponent && <LessonComponent />
+  }
 
   return (
     <div>
-  <select value={lesson} onChange={(e) => setLesson(e.target.value)}>
-    {Array.from({ length: 5 }, (_, i) => i + 1).map(n => (
-      <option key={n} value={`lesson${n}`}>
-        Lección {n}
-      </option>
-    ))}
-  </select>
-  <hr />
+      <select value={lesson} onChange={(e) => setLesson(e.target.value)}>
+        {Array.from({ length: 18 }, (_, i) => i + 1).map(n => (
+          <option key={n} value={`lesson${n}`}>
+            Lección {n}
+          </option>
+        ))}
+      </select>
+      <hr />
 
-  {renderLesson()}
-</div>
+      {renderLesson()}
+    </div>
   )
 }
 
