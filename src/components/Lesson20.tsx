@@ -24,7 +24,7 @@ interface LessonLayoutProps {
  * Utiliza CSS Grid para su estructura interna.
  */
 const Card: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
-  <div className={`grid bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden ${className}`}>
+  <div className={`grid bg-white rounded-xl shadow-lg border border-slate-200  ${className}`}>
     {children}
   </div>
 );
@@ -79,7 +79,7 @@ const UniformityDiagram: React.FC = () => {
     <div className="grid grid-rows-[1fr_auto] gap-6 p-6 place-items-center ">
       <div className="grid grid-cols-[repeat(20,minmax(0,1fr))] gap-px w-64 h-64 bg-slate-200 border border-slate-300">
         {cells.map((val, idx) => (
-          <div key={idx} className={`w-full  ${val === 0 ? 'bg-blue-500' : 'bg-red-500'}`} />
+          <div key={idx} className={`  ${val === 0 ? 'bg-blue-500' : 'bg-red-500'}`} />
         ))}
       </div>
       <div className="grid grid-cols-2 gap-4">
@@ -357,8 +357,8 @@ const SuspensionDiagram: React.FC = () => {
 
   return (
     <div className="grid grid-rows-[1fr_auto] gap-6 p-6 place-items-center ">
-      <div className="grid place-items-center relative w-full max-w-md">
-        <svg width="300" height="300" className="border-b-4 border-l-4 border-r-4 border-slate-400 rounded-b-xl overflow-hidden bg-white">
+      <div className="grid place-items-center relative  ">
+        <svg width="300" height="300" className="border-b-4 border-l-4 border-r-4 border-slate-400 rounded-b-xl  bg-white">
           {/* Líquido */}
           <rect x="0" y="50" width="300" height="250" fill="#bae6fd" opacity="0.5" />
           
@@ -408,7 +408,7 @@ const SuspensionDiagram: React.FC = () => {
         </svg>
       </div>
 
-      <div className="grid grid-rows-[auto_auto] gap-2 w-full max-w-md bg-slate-50 p-4 rounded-lg border border-slate-200">
+      <div className="grid grid-rows-[auto_auto] gap-2  max-w-md bg-slate-50 p-4 rounded-lg border border-slate-200">
         <div className="grid grid-cols-[1fr_auto] items-center">
           <label htmlFor="speed-slider" className="font-semibold text-slate-700">Velocidad de Agitación</label>
           <span className="font-mono bg-white px-2 py-1 rounded border text-sm">{speed}%</span>
@@ -419,7 +419,7 @@ const SuspensionDiagram: React.FC = () => {
           min="0" max="100" 
           value={speed} 
           onChange={(e) => setSpeed(Number(e.target.value))}
-          className="w-full h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+          className=" h-2 bg-slate-300 rounded-lg appearance-none cursor-pointer accent-indigo-600"
         />
         <div className="grid grid-cols-2 text-xs text-slate-500 mt-1">
           <span>Sedimentación</span>
@@ -448,23 +448,23 @@ const AgitationSpeedDiagram: React.FC = () => {
           max="100" 
           value={speed} 
           onChange={(e) => setSpeed(Number(e.target.value))}
-          className="w-full accent-blue-600 cursor-pointer"
+          className=" accent-blue-600 cursor-pointer"
         />
         <span className="text-sm font-semibold text-slate-600">Alta</span>
       </div>
 
-      <div className="grid place-items-center relative bg-slate-100 rounded-lg border border-slate-300 overflow-hidden min-h-[300px]">
+      <div className="grid place-items-center relative bg-slate-100 rounded-lg border border-slate-300  min-h-[300px]">
         {/* Contenedor del Tanque */}
-        <div className="w-48 h-64 border-4 border-t-0 border-slate-400 rounded-b-3xl relative bg-blue-50/50 overflow-hidden">
+        <div className="w-48 h-64 border-4 border-t-0 border-slate-400 rounded-b-3xl relative bg-blue-50/50 ">
           {/* Nivel de Líquido */}
-          <div className="absolute bottom-0 w-full h-[90%] bg-blue-200/40 border-t border-blue-300"></div>
+          <div className="absolute bottom-0  h-[90%] bg-blue-200/40 border-t border-blue-300"></div>
           
           {/* Eje y Agitador */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-4/5 bg-slate-500"></div>
           <div className="absolute bottom-[20%] left-1/2 -translate-x-1/2 w-16 h-4 bg-slate-600"></div>
 
           {/* Partículas simuladas */}
-          <svg className="absolute inset-0 w-full  pointer-events-none">
+          <svg className="absolute inset-0   pointer-events-none">
             <style>
               {`
                 @keyframes float-sediment {
@@ -529,7 +529,7 @@ const AgitationSpeedDiagram: React.FC = () => {
 const PaddleAgitatorDiagram: React.FC = () => {
   return (
     <div className="grid place-items-center  p-6 bg-slate-50 min-h-[400px]">
-       <svg viewBox="0 0 200 200" className="w-full max-w-md h-auto">
+       <svg viewBox="0 0 200 200" className=" max-w-md h-auto">
         <style>
           {`
             @keyframes spin-slow { 100% { transform: rotate(360deg); } }
@@ -577,7 +577,7 @@ const PaddleAgitatorDiagram: React.FC = () => {
 const PropellerAgitatorDiagram: React.FC = () => {
   return (
     <div className="grid place-items-center  p-6 bg-slate-50 min-h-[400px]">
-       <svg viewBox="0 0 200 250" className="w-full max-w-sm h-auto">
+       <svg viewBox="0 0 200 250" className=" max-w-sm h-auto">
         <style>
           {`
             @keyframes flow-axial-down {
@@ -628,7 +628,7 @@ const PropellerAgitatorDiagram: React.FC = () => {
 const TurbineAgitatorDiagram: React.FC = () => {
   return (
     <div className="grid place-items-center  p-6 bg-slate-50 min-h-[400px]">
-       <svg viewBox="0 0 200 200" className="w-full max-w-md h-auto">
+       <svg viewBox="0 0 200 200" className=" max-w-md h-auto">
         <style>
           {`
             @keyframes turbine-spin { 100% { transform: rotate(360deg); } }
@@ -691,7 +691,7 @@ const TurbineAgitatorDiagram: React.FC = () => {
 const RibbonMixerDiagram: React.FC = () => {
   return (
     <div className="grid place-items-center  p-6 bg-slate-50 min-h-[400px]">
-       <svg viewBox="0 0 300 150" className="w-full max-w-lg h-auto">
+       <svg viewBox="0 0 300 150" className=" max-w-lg h-auto">
         <style>
           {`
             @keyframes slide-right {
@@ -744,7 +744,7 @@ const MixingComparisonDiagram: React.FC = () => {
       {/* Mezcla Deficiente */}
       <div className="grid grid-rows-[auto_1fr] gap-4 place-items-center">
         <h4 className="font-bold text-slate-700 text-lg">Mezcla Deficiente</h4>
-        <div className="w-48 h-48 bg-white border-2 border-slate-300 shadow-inner relative overflow-hidden">
+        <div className="w-48 h-48 bg-white border-2 border-slate-300 shadow-inner relative ">
           {Array.from({ length: 150 }).map((_, i) => {
              // Distribuimos los puntos rojos concentrados en una esquina
              const isClumped = i < 100;
@@ -767,7 +767,7 @@ const MixingComparisonDiagram: React.FC = () => {
       {/* Mezcla Uniforme */}
       <div className="grid grid-rows-[auto_1fr] gap-4 place-items-center">
         <h4 className="font-bold text-emerald-700 text-lg">Producto Bien Mezclado</h4>
-        <div className="w-48 h-48 bg-white border-2 border-emerald-300 shadow-inner relative overflow-hidden">
+        <div className="w-48 h-48 bg-white border-2 border-emerald-300 shadow-inner relative ">
           {Array.from({ length: 150 }).map((_, i) => {
              // Distribución pseudo-uniforme mediante Grid mental
              const cols = 12;
@@ -809,21 +809,23 @@ const LessonLayout: React.FC<LessonLayoutProps> = ({ appTitle, tabs, activeTabId
   const activeTab = tabs.find(t => t.id === activeTabId) || tabs[0];
 
   return (
-    <div className="grid grid-rows-[auto_auto_auto_1fr] bg-slate-50 text-slate-800 font-sans h-screen">
-      
-      {/* 1. Header con Title y Nav (Tabs) */}
-<header className="p-6 bg-white border-b border-slate-200 shadow-sm w-full">        <h1 className="text-2xl font-extrabold text-indigo-800 uppercase tracking-tight">
+<div className="min-h-screen w-full grid grid-cols-1 grid-rows-[auto_auto_1fr] bg-slate-100 text-slate-800 font-sans selection:bg-indigo-100">
+      {/* HEADER */}
+      <header className="grid bg-white border-b border-slate-200 top-0 z-50">
+                <div className="grid grid-cols-[1fr_auto] items-center px-6 py-4 ">
+
+          <h1 className="text-xl md:text-2xl font-black text-indigo-900 flex items-center gap-3">
           {appTitle}
         </h1>
-        
-        <nav className="grid grid-flow-col justify-start gap-2 overflow-x-auto">
+
+        <nav className="flex gap-2  mt-3 pb-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`px-5 py-2 rounded-t-lg font-medium border-b-4 transition-all ${
-                activeTabId === tab.id 
-                  ? 'border-indigo-600 bg-indigo-50 text-indigo-700' 
+              className={` px-4 py-2 rounded-t-lg font-medium border-b-4 transition-all text-sm md:text-base ${
+                activeTabId === tab.id
+                  ? 'border-indigo-600 bg-indigo-50 text-indigo-700'
                   : 'border-transparent text-slate-500 hover:bg-slate-100 hover:text-slate-700'
               }`}
             >
@@ -831,25 +833,26 @@ const LessonLayout: React.FC<LessonLayoutProps> = ({ appTitle, tabs, activeTabId
             </button>
           ))}
         </nav>
+        </div>
       </header>
 
-      {/* 2. Diagram Title */}
-      <div className="px-8 pt-8 pb-2 grid">
-        <h2 className="text-3xl font-bold text-slate-800">
+      {/* TITLE */}
+      <div className="px-4 md:px-8 pt-6 md:pt-8 pb-2">
+        <h2 className="text-xl font-bold text-slate-800">
           {activeTab.title}
         </h2>
       </div>
 
-      {/* 3. Diagram Description */}
-      <div className="px-8 pb-6 grid">
-        <p className="text-lg text-slate-600 max-w-4xl leading-relaxed">
+      {/* DESCRIPTION */}
+      <div className="px-4 md:px-8 pb-6">
+        <p className="text-base md:text-lg text-slate-600">
           {activeTab.description}
         </p>
       </div>
 
-      {/* 4. Diagram Render (Envuelto en componente Card) */}
-      <main className="px-8 pb-8 grid min-h-0">
-        <Card className="min-h-0  overflow-auto">
+      {/* CONTENT */}
+      <main className="px-4 md:px-8 pb-8">
+        <Card className="">
           {activeTab.render}
         </Card>
       </main>
@@ -857,7 +860,6 @@ const LessonLayout: React.FC<LessonLayoutProps> = ({ appTitle, tabs, activeTabId
     </div>
   );
 };
-
 // --- APLICACIÓN RAÍZ ---
 
 export default function App() {
