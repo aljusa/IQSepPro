@@ -19,6 +19,8 @@ import Lesson17 from './components/Lesson17'
 import Lesson18 from './components/Lesson18'
 import Lesson19 from './components/Lesson19'
 
+import Lesson20 from './components/Lesson20'
+
 function App() {
   const [lesson, setLesson] = useState('lesson1')
   const lessons = {
@@ -41,6 +43,7 @@ function App() {
     lesson17: Lesson17,
     lesson18: Lesson18,
     lesson19: Lesson19,
+    lesson20: Lesson20,
 
   } as const
 
@@ -56,7 +59,7 @@ function App() {
   return (
     <div>
       <select value={lesson} onChange={(e) => setLesson(e.target.value)}>
-        {Array.from({ length: 19 }, (_, i) => i + 1).map(n => (
+        {Array.from({ length: 20 }, (_, i) => i + 1).map(n => (
           <option key={n} value={`lesson${n}`}>
             Lección {n}
           </option>
