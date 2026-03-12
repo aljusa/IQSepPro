@@ -832,7 +832,6 @@ const LessonLayout = () => {
             <Layers className="text-blue-600" />
             Mecánica de Sedimentación
           </h1>
-          <p className="text-sm text-slate-500">Módulo de Visualización de Dinámica de Fluidos</p>
         </div>
         
         <nav className="flex gap-1 bg-slate-100 p-1 rounded-lg">
