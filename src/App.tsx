@@ -29,6 +29,11 @@ import Lesson27 from './components/Lesson27'
 import Lesson28 from './components/Lesson28'
 import Lesson29 from './components/Lesson29'
 import Lesson30 from './components/Lesson30'
+import Lesson31 from './components/Lesson31'
+import Lesson32 from './components/Lesson32'
+import Lesson33 from './components/Lesson33'
+import Lesson34 from './components/Lesson34'
+
 
 function App() {
   const [lesson, setLesson] = useState('lesson1')
@@ -63,6 +68,10 @@ function App() {
     lesson28: Lesson28,
     lesson29: Lesson29,
     lesson30: Lesson30,
+    lesson31: Lesson31,
+    lesson32: Lesson32,
+    lesson33: Lesson33,
+    lesson34: Lesson34,
 
   } as const
 
@@ -78,7 +87,7 @@ function App() {
   return (
     <div>
       <select value={lesson} onChange={(e) => setLesson(e.target.value)}>
-        {Array.from({ length: 30 }, (_, i) => i + 1).map(n => (
+        {Array.from({ length: 34 }, (_, i) => i + 1).map(n => (
           <option key={n} value={`lesson${n}`}>
             Lección {n}
           </option>
