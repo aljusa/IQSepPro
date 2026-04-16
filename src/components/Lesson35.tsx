@@ -1,5 +1,4 @@
-import React from 'react';
-import { BookOpen, Droplet, Activity, Zap, Settings, ArrowRight, ArrowLeft } from 'lucide-react';
+import { BookOpen, Droplet, Zap, Settings, ArrowRight } from 'lucide-react';
 
 // --- VISUAL COMPONENTS (SVG & HTML) ---
 
@@ -399,7 +398,7 @@ export default function App() {
           <BookOpen size={40} className="text-blue-300" />
           <div>
             <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight">Fundamentos y Clasificación de Bombas Hidráulicas</h1>
-            <p className="mt-2 text-blue-200 text-sm md:text-base font-light">Lección interactiva estructurada basada en textos académicos.</p>
+        
           </div>
         </div>
       </header>
@@ -422,9 +421,7 @@ export default function App() {
             </div>
             
             <div className="p-6">
-              <h3 className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-4 flex items-center gap-2">
-                <Activity size={14} /> Visualización Sugerida
-              </h3>
+           
               {/* Visualización generada a medida */}
               {block.visual}
             </div>
