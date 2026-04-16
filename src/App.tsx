@@ -34,6 +34,7 @@ import Lesson32 from './components/Lesson32'
 import Lesson33 from './components/Lesson33'
 import Lesson34 from './components/Lesson34'
 import Lesson35 from './components/Lesson35'
+import Expo from './components/Expo'
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
     lesson33: Lesson33,
     lesson34: Lesson34,
     lesson35: Lesson35,
+    expo:Expo
 
   } as const
 
@@ -94,6 +96,9 @@ function App() {
             Lección {n}
           </option>
         ))}
+        <option key="expo" value="expo">
+           Exposición
+          </option>
       </select>
       <hr />
 
